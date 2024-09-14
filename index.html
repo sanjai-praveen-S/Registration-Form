@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: white;
+            font-size: 50px;
+            margin-bottom: 20px;
+            font-family: sans-serif;
+            font-weight: 300;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.152);
+            padding: 20px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        .form-cont {
+            display: flex;
+            width: 95%;
+            margin: 10px 0px;
+            background-color: black;
+            border-radius: 20px;
+            overflow: hidden;
+            flex-direction: row;
+        }
+        label {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 15px;
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+        }
+        #reqd {
+            color: red;
+        }
+        .form-cont input {
+            background-color: black;
+            border: none;
+            color: white;
+            outline: none;
+            width: 70%;
+            font-size: 16px;
+        }
+        select {
+            background-color: black;
+            border: none;
+            color: white;
+            width: 70%;
+            font-size: 16px;
+            outline: none;
+        }
+        .form-cont1 {
+            display: flex;
+            width: 95%;
+            margin: 10px 0px;
+            background-color: black;
+            border-radius: 20px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        textarea {
+            background-color: black;
+            border: none;
+            color: white;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+        }
+        #submitbtn {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #submitbtn:hover {
+            background-color: black;
+            color: white;
+        }
+        .form-cont2 {
+            display: flex;
+            width: 95%;
+            margin: 10px 0px;
+            background-color: black;
+            border-radius: 20px;
+            overflow: hidden;
+            flex-direction: row;
+        }
+        #dobin {
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+        }
+        .vr {
+            width: 2px;
+            height: 25px;
+            background-color: white;
+            margin: 0 5px;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+
+    <body>
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <div class="form-cont">
+                <label>First Name:<span id="reqd">*</span></label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+                <span class="error-message" id="firstNameError">First name is required.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Second Name:<span id="reqd">*</span></label>
+                <input type="text" id="second-name" name="second-name" placeholder="Enter your second name">
+                <span class="error-message" id="secondNameError">Second name is required.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Email:<span id="reqd">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <span class="error-message" id="emailError">Valid email is required.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>DOB:<span id="reqd">*</span></label>
+                <div id="dobin">
+                    <input type="number" id="dobday" placeholder="dd" min="1" max="31" name="dobday">
+                    <div class="vr"></div>
+                    <input type="number" id="dobmonth" placeholder="MM" min="1" max="12" name="dobmonth">
+                    <div class="vr"></div>
+                    <input type="number" id="dobyear" placeholder="YYYY" min="1990" max="2024" name="dobyear">
+                </div>
+                <span class="error-message" id="dobError">Please enter a valid date.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Phone:<span id="reqd">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <span class="error-message" id="phoneError">Valid phone number is required.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Password:<span id="reqd">*</span></label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <span class="error-message" id="passwordError">Password is required.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Confirm Password:<span id="reqd">*</span></label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+                <span class="error-message" id="confirmPasswordError">Passwords do not match.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Country: <span id="reqd">*</span></label>
+                <select id="country" name="country">
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                </select>
+                <span class="error-message" id="countryError">Please select your country.</span>
+            </div>
+
+            <div class="form-cont">
+                <label>Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+            </div>
+
+            <input type="submit" value="Submit" id="submitbtn">
+        </form>
+
+        <script>
+            document.getElementById("registrationForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let isValid = true;
+
+                // First name validation
+                const firstName = document.getElementById("first-name").value;
+                if (firstName === "") {
+                    isValid = false;
+                    document.getElementById("firstNameError").style.display = "block";
+                } else {
+                    document.getElementById("firstNameError").style.display = "none";
+                }
+
+                // Second name validation
+                const secondName = document.getElementById("second-name").value;
+                if (secondName === "") {
+                    isValid = false;
+                    document.getElementById("secondNameError").style.display = "block";
+                } else {
+                    document.getElementById("secondNameError").style.display = "none";
+                }
+
+                // Email validation
+                const email = document.getElementById("email").value;
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (!email.match(emailPattern)) {
+                    isValid = false;
+                    document.getElementById("emailError").style.display = "block";
+                } else {
+                    document.getElementById("emailError").style.display = "none";
+                }
+
+                // DOB validation
+                const dobDay = document.getElementById("dobday").value;
+                const dobMonth = document.getElementById("dobmonth").value;
+                const dobYear = document.getElementById("dobyear").value;
+                if (dobDay === "" || dobMonth === "" || dobYear === "") {
+                    isValid = false;
+                    document.getElementById("dobError").style.display = "block";
+                } else {
+                    document.getElementById("dobError").style.display = "none";
+                }
+
+                // Phone number validation
+                const phone = document.getElementById("phone").value;
+                if (phone === "" || phone.length < 10) {
+                    isValid = false;
