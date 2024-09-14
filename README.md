@@ -1,4 +1,4 @@
 Registration Form
-.Html
+Html
 .CSS
-java script
+.java script
