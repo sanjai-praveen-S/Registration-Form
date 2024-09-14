@@ -1,4 +1,4 @@
-<Registration Form>
+Registration Form
 .Html
 .CSS
->java script
+java script
